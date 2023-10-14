@@ -1,10 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+import Header from "../../components/Header.astro";
+import Hero from "../../components/Hero.astro";
+import {getCollection} from "astro:content";
 
-const allPost = await Astro.glob("../content/tips/*.md");
+const post = (await getCollection("tips")).sort(
+    (a,b) =>a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+console.log(post)
 ---
 
 <Layout title="Sofidev">
@@ -41,11 +45,11 @@ const allPost = await Astro.glob("../content/tips/*.md");
 		<Hero />
 		<ul role="list" class="link-card-grid">
 			{
-				allPost.map((item) => (
+				post.map((post) => (
 					<Card
-						image={item?.frontmatter?.image}
-						title={item?.frontmatter?.title}
-						resume={item?.frontmatter?.resume}
+						image={post.data.image}
+						title={post.data.title}
+						resume={post.data.resume}
 					/>
 				))
 			}
