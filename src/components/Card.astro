@@ -3,12 +3,17 @@ interface Props {
 	image: string;
 	title: string;
 	resume: string;
+	time: string;
+	slug: string;
+	tags: string[];
+	category: string;
 }
 
-const { image, title, resume } = Astro.props;
+const { image, title, resume,slug, category } = Astro.props;
 ---
 
 <article class="group">
+	<a href={`/posts/${slug}`}>
 	<img
 		alt={title}
 		src={image}
@@ -16,7 +21,6 @@ const { image, title, resume } = Astro.props;
 	/>
 
 	<div class="p-4">
-		<a href="#">
 			<h3 class="text-lg font-medium text-white-900">
 				{title}
 			</h3>
