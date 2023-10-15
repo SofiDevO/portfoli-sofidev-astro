@@ -4,15 +4,14 @@ import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import { IconContext } from "react-icons";
 
 import {
-	ArrowPathIcon,
 	Bars3Icon,
-	SquaresPlusIcon,
+	FireIcon,
 	XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
 
 import { FaGithubAlt, FaLinkedin, FaYoutube } from "react-icons/fa6";
-import { ImFilePdf } from "react-icons/im";
+/* import { ImFilePdf } from "react-icons/im"; */
 
 
 const more = [
@@ -32,7 +31,7 @@ const more = [
 		name: "My CV",
 		description: "Download my Cv",
 		href: "../../public/docs/Angela_Sofia_Osorio_Cv_2023.pdf",
-		icon: ImFilePdf,
+		icon: FireIcon,
 	},
 ];
 const callsToAction = [
@@ -44,7 +43,7 @@ function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
 
-export default function HeaderTop() {
+export default function HeaderTop(): JSX.Element {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
