@@ -21,10 +21,7 @@ const post = (await getCollection("tips")).sort(
 			<Social />
 		</div>
 
-		<img
-			src="../images/_2263dae2-48d0-4d79-85c7-32b506a6ce10.jpg"
-			alt=""
-		/>
+		<img src="../images/_2263dae2-48d0-4d79-85c7-32b506a6ce10.jpg" alt="" />
 	</div>
 	<main>
 		<ul role="list" class="link-card-grid">
@@ -48,7 +45,7 @@ const post = (await getCollection("tips")).sort(
 <style>
 	main {
 		margin: auto;
-		
+
 		padding: 2rem 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
@@ -74,10 +71,21 @@ const post = (await getCollection("tips")).sort(
 		color: white;
 		font-size: 6rem;
 		font-weight: bolder;
+		flex-wrap: wrap;
+		align-content: center;
 	}
 	.hero img {
-		width: 30rem;
+		min-width: 18rem;
 		border-radius: 50%;
+		width: 31%;
+	}
+	@media screen and (max-width: 768px) {
+		.hero {
+			flex-direction: column-reverse;
+			font-size: 3rem;
+			text-align: center;
+			justify-content: center;
+		}
 	}
 	.text-flicker-in-glow {
 		-webkit-animation: text-flicker-in-glow 4s linear both;
@@ -385,4 +393,4 @@ const post = (await getCollection("tips")).sort(
 		padding: 0;
 	}
 </style>
-../components/Footer.tsx
+
