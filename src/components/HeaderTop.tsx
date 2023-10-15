@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import profile from "../../public/images/profile.png";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+
 import {
 	ArrowPathIcon,
 	Bars3Icon,
@@ -10,7 +11,8 @@ import {
 import { ChevronDownIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
 
 import { FaGithubAlt, FaLinkedin, FaYoutube } from "react-icons/fa6";
-import { BsFiletypePdf } from "react-icons/bs";
+import { ImFilePdf } from "react-icons/im";
+
 
 const more = [
 	{
@@ -29,7 +31,7 @@ const more = [
 		name: "My CV",
 		description: "Download my Cv",
 		href: "../../public/docs/Angela_Sofia_Osorio_Cv_2023.pdf",
-		icon: BsFiletypePdf,
+		icon: ImFilePdf,
 	},
 ];
 const callsToAction = [
@@ -45,7 +47,7 @@ export default function HeaderTop() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<header className="bg-black items-center">
+		<header className="backdrop-blur-md bg-black/30 fixed  w-full z-10">
 			<nav
 				className="mx-auto flex max-w-7xl justify-between p-6 lg:px-8 items-center"
 				aria-label="Global"
