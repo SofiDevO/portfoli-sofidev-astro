@@ -6,7 +6,9 @@ import Footer from "../components/Footer.vue";
 import { getCollection } from "astro:content";
 import Social from "../components/Social.svelte";
 
-const post = (await getCollection("tips")).filter((category) => category);
+const post = (await getCollection("tips")).sort(
+    (a,b) =>a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
 <Layout title="Sofidev">
@@ -25,13 +27,13 @@ const post = (await getCollection("tips")).filter((category) => category);
 	<main>
 		<ul role="list" class="link-card-grid">
 			{
-				post.map((post) => (
-					<Card
-						image={post.data.image}
-						title={post.data.title}
-						resume={post.data.resume}
-						slug={post.slug}
-					/>
+				   post.slice(0, 2).map((post) => (
+          <Card
+            image={post.data.image}
+            title={post.data.title}
+            resume={post.data.resume}
+            slug={post.slug}
+          />
 				))
 			}
 		</ul>
