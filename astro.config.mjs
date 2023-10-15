@@ -14,5 +14,6 @@ export default defineConfig({
 		},
 	},
 	
+	
 	integrations: [tailwind(), mdx(), react(), vue(), svelte(),sitemap()],
 });

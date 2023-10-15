@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import profile from "../../public/images/profile.png";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import { IconContext } from "react-icons";
 
 import {
 	ArrowPathIcon,
