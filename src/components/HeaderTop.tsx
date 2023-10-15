@@ -30,7 +30,7 @@ const more = [
 	{
 		name: "My CV",
 		description: "Download my Cv",
-		href: "../../public/docs/Angela_Sofia_Osorio_Cv_2023.pdf",
+		href: "../docs/Angela_Sofia_Osorio_Cv_2023.pdf",
 		icon: ImFilePdf,
 	},
 ];
