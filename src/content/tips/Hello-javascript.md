@@ -1,5 +1,5 @@
 ---
-image: '../../public/images/portada2.jpg'
+image: '../public/images/portada2.jpg'
 title: 'Como crecer en LinkedIn'
 resume: 'Hello this is my first recommendation'
 pubDate: '2023-07-13'

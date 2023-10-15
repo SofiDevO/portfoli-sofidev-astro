@@ -1,5 +1,5 @@
 ---
-image: '../../public/images/portada1.jpg'
+image: '../public/images/portada1.jpg'
 title: 'Hello Astro'
 resume: 'Hello this is my first recommendation'
 pubDate: '2023-10-13'
