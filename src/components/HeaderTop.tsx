@@ -76,31 +76,31 @@ export default function HeaderTop(): JSX.Element {
 				<Popover.Group className="hidden lg:flex lg:gap-x-12">
                     	<a
 						href="#"
-						className="text-sm font-semibold leading-6 text-violet-500"
+						className="text-xl font-semibold leading-6 text-violet-500"
 					>
 						Skills
 					</a>
 					<a
 						href="#"
-						className="text-sm font-semibold leading-6 text-violet-500"
+						className="text-xl font-semibold leading-6 text-violet-500"
 					>
 						Portfolio
 					</a>
 					<a
 						href="/posts"
-						className="text-sm font-semibold leading-6 text-violet-500"
+						className="text-xl font-semibold leading-6 text-violet-500"
 					>
 						Blog
 					</a>
 					<a
 						href="/about"
-						className="text-sm font-semibold leading-6 text-violet-500"
+						className="text-xl font-semibold leading-6 text-violet-500"
 					>
 						About Me
 					</a>
 					
 					<Popover className="relative">
-						<Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-violet-500">
+						<Popover.Button className="flex items-center gap-x-1 text-xl font-semibold leading-6 text-violet-500">
 							Much More
 							<ChevronDownIcon
 								className="h-5 w-5 flex-none text-gray-400"
@@ -197,25 +197,25 @@ export default function HeaderTop(): JSX.Element {
 							
 								<a
 									href="#"
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+									className="-mx-3 block rounded-lg px-3 py-2 text-xl	 font-semibold leading-7 text-violet-500 hover:bg-gray-50"
 								>
 									Skills
 								</a>
 								<a
 									href="/about"
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+									className="-mx-3 block rounded-lg px-3 py-2 text-xl	 font-semibold leading-7 text-violet-500 hover:bg-gray-50"
 								>
 									About me
 								</a>
 								<a
 									href="#"
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+									className="-mx-3 block rounded-lg px-3 py-2 text-xl	 font-semibold leading-7 text-violet-500 hover:bg-gray-50"
 								>
 									Portfolio
 								</a>
 								<a
 									href="/posts"
-									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+									className="-mx-3 block rounded-lg px-3 py-2 text-xl	 font-semibold leading-7 text-violet-500 hover:bg-gray-50"
 								>
 									Blog
 								</a>
@@ -223,7 +223,7 @@ export default function HeaderTop(): JSX.Element {
                             <Disclosure as="div" className="-mx-3">
 									{({ open }) => (
 										<>
-											<Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-violet-500 hover:bg-gray-50">
+											<Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-xl font-semibold leading-7 text-violet-500 hover:bg-gray-50">
 												Much more
 												<ChevronDownIcon
 													className={classNames(
