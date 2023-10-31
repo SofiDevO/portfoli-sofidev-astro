@@ -17,7 +17,7 @@ const date = event.toDateString();
                 <time class="pr-2">{date}</time>
                 {
                     tags.map((item) => (
-                        <span class="whitespace-nowrap rounded-full bg-purple-600 px-2.5  py-1 text-xs text-white">
+                        <span class="whitespace-nowrap rounded-full bg-purple-600 px-2.5  py-1 text-xs text-white ">
                             {item}
                         </span>
                     ))
@@ -25,17 +25,17 @@ const date = event.toDateString();
             </span>
 		</div>
 
-		<div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-			<div class=" h-64 overflow-hidden sm:h-80 lg:h-full">
-				<img
-					alt={title}
-					src={image}
-					class=" inset-0 h-full w-full object-contain"
-				/>
-			</div>
+		<div class=" h-64 overflow-hidden sm:h-80 lg:h-full flex justify-center">
+			<img
+				alt={title}
+				src={image}
+				class="inset-0 lg:h-1/2 lg:w-3/4 md:h-full md:w-full object-contain align-center "
+			/>
+		</div>
+		<div class="mt-8 justify-center	 gap-8 lg:grid-cols-2 lg:gap-16">
 
-			<div class="lg:py-16">
-				<article class="space-y-4 text-gray-200 text-md">
+			<div class="lg:py-16 justify-center">
+				<article class="space-y-4 text-gray-200 text-md justify-center ">
 					<slot/>
 				</article>
 			</div>
