@@ -1,7 +1,6 @@
 import { Fragment, useState } from "react";
 import profile from "../../public/images/profile.png";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-import { IconContext } from "react-icons";
 
 import {
 	Bars3Icon,
@@ -12,7 +11,7 @@ import { ChevronDownIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
 
 import { FaGithubAlt, FaLinkedin, FaYoutube } from "react-icons/fa6";
 import { ImFilePdf } from "react-icons/im";
-
+import { Logo } from "./Logo";
 
 const more = [
 	{
@@ -35,7 +34,11 @@ const more = [
 	},
 ];
 const callsToAction = [
-	{ name: "Youtube", href: "https://www.youtube.com/channel/UC36_js-krsAHAEAWpEDhHtw", icon: FaYoutube },
+	{
+		name: "Youtube",
+		href: "https://www.youtube.com/channel/UC36_js-krsAHAEAWpEDhHtw",
+		icon: FaYoutube,
+	},
 	{ name: "Mail me", href: "mailto:contact@itssofi.dev", icon: EnvelopeIcon },
 ];
 
@@ -49,20 +52,10 @@ export default function HeaderTop(): JSX.Element {
 	return (
 		<header className="backdrop-blur-md bg-black/30 fixed  w-full z-10">
 			<nav
-				className="mx-auto flex max-w-7xl justify-between p-6 lg:px-8 items-center"
+				className="mx-auto flex max-w-8xl justify-between p-2 lg:px-8 items-center"
 				aria-label="Global"
 			>
-				<div className="flex lg:flex-2 items-center gap-4">
-					<a href="/" className="-m-1.5 p-1.5 flex items-center gap-5">
-						<span className="sr-only flex items-center ">SofiDev</span>
-						<img className=" w-14 " src={profile} alt="logo" />
-						<h1 className="mb-4 items-center">
-							<span className="font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-purple-400 to-purple-600">
-								SofiDev
-							</span>
-						</h1>
-					</a>
-				</div>
+				<Logo />
 				<div className="flex lg:hidden">
 					<button
 						type="button"
@@ -74,33 +67,33 @@ export default function HeaderTop(): JSX.Element {
 					</button>
 				</div>
 				<Popover.Group className="hidden lg:flex lg:gap-x-12">
-                    	<a
+					<a
 						href="#"
-						className="text-xl font-semibold leading-6 text-violet-500"
+						className="text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400"
 					>
 						Skills
 					</a>
 					<a
 						href="#"
-						className="text-xl font-semibold leading-6 text-violet-500"
+						className="text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400"
 					>
 						Portfolio
 					</a>
 					<a
 						href="/posts"
-						className="text-xl font-semibold leading-6 text-violet-500"
+						className="text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400"
 					>
 						Blog
 					</a>
 					<a
 						href="/about"
-						className="text-xl font-semibold leading-6 text-violet-500"
+						className="text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400"
 					>
 						About Me
 					</a>
-					
+
 					<Popover className="relative">
-						<Popover.Button className="flex items-center gap-x-1 text-xl font-semibold leading-6 text-violet-500">
+						<Popover.Button className="flex items-center gap-x-1 text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400">
 							Much More
 							<ChevronDownIcon
 								className="h-5 w-5 flex-none text-gray-400"
@@ -117,16 +110,16 @@ export default function HeaderTop(): JSX.Element {
 							leaveFrom="opacity-100 translate-y-0"
 							leaveTo="opacity-0 translate-y-1"
 						>
-							<Popover.Panel className="absolute -left-80 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-black shadow-lg ring-1 ring-gray-900/5">
+							<Popover.Panel className="absolute -left-80 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl  bg-black shadow-lg ring-1">
 								<div className="p-4">
 									{more.map((item) => (
 										<div
 											key={item.name}
 											className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
 										>
-											<div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+											<div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-black-50 group-hover:bg-gray">
 												<item.icon
-													className="h-6 w-6 text-violet-500 group-hover:text-indigo-600"
+													className="h-6 w-6 text-violet-500 group-hover:text-black"
 													aria-hidden="true"
 												/>
 											</div>
@@ -134,7 +127,7 @@ export default function HeaderTop(): JSX.Element {
 												<a
 													href={item.href}
 													className="block font-semibold text-violet-500"
-                                                    target="_blank"
+													target="_blank"
 												>
 													{item.name}
 													<span className="absolute inset-0" />
@@ -151,11 +144,11 @@ export default function HeaderTop(): JSX.Element {
 										<a
 											key={item.name}
 											href={item.href}
-											className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 hover:text-pink-900 text-violet-500"
-                                            target="_blank"
+											className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 hover:text-violet-900 text-black-500"
+											target="_blank"
 										>
 											<item.icon
-												className="h-5 w-5 flex-none text-violet-500"
+												className="h-5 w-5 flex-none text-black-500"
 												aria-hidden="true"
 											/>
 											{item.name}
@@ -165,8 +158,6 @@ export default function HeaderTop(): JSX.Element {
 							</Popover.Panel>
 						</Transition>
 					</Popover>
-
-				
 				</Popover.Group>
 			</nav>
 			<Dialog
@@ -194,7 +185,6 @@ export default function HeaderTop(): JSX.Element {
 					<div className="mt-6 flow-root">
 						<div className="-my-6 divide-y divide-gray-500/10">
 							<div className="space-y-2 py-6">
-							
 								<a
 									href="#"
 									className="-mx-3 block rounded-lg px-3 py-2 text-xl	 font-semibold leading-7 text-violet-500 hover:bg-gray-50"
@@ -220,35 +210,35 @@ export default function HeaderTop(): JSX.Element {
 									Blog
 								</a>
 							</div>
-                            <Disclosure as="div" className="-mx-3">
-									{({ open }) => (
-										<>
-											<Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-xl font-semibold leading-7 text-violet-500 hover:bg-gray-50">
-												Much more
-												<ChevronDownIcon
-													className={classNames(
-														open ? "rotate-180" : "",
-														"h-5 w-5 flex-none"
-													)}
-													aria-hidden="true"
-												/>
-											</Disclosure.Button>
-											<Disclosure.Panel className="mt-2 space-y-2">
-												{[...more, ...callsToAction].map((item) => (
-													<Disclosure.Button
-														key={item.name}
-														as="a"
-														href={item.href}
-                                                        target="_blank"
-														className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-violet-500 hover:bg-gray-50"
-													>
-														{item.name}
-													</Disclosure.Button>
-												))}
-											</Disclosure.Panel>
-										</>
-									)}
-								</Disclosure>
+							<Disclosure as="div" className="-mx-3">
+								{({ open }) => (
+									<>
+										<Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-xl font-semibold leading-7 text-violet-500 hover:bg-gray-50">
+											Much more
+											<ChevronDownIcon
+												className={classNames(
+													open ? "rotate-180" : "",
+													"h-5 w-5 flex-none"
+												)}
+												aria-hidden="true"
+											/>
+										</Disclosure.Button>
+										<Disclosure.Panel className="mt-2 space-y-2">
+											{[...more, ...callsToAction].map((item) => (
+												<Disclosure.Button
+													key={item.name}
+													as="a"
+													href={item.href}
+													target="_blank"
+													className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+												>
+													{item.name}
+												</Disclosure.Button>
+											))}
+										</Disclosure.Panel>
+									</>
+								)}
+							</Disclosure>
 						</div>
 					</div>
 				</Dialog.Panel>

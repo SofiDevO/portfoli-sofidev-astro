@@ -17,7 +17,7 @@ const canonicalURL = new  URL(Astro.url.pathname, Astro.site)
 
 	<!-- Global Metadata -->
 	<link rel="icon" href="/favicon.png" />
-	<link rel="apple-touch-icon" href="/images/icon/192x192.png" />
+	<link rel="apple-touch-icon" href="../images/profile.png" />
 	<link rel="manifest" href="/manifest.webmanifest" />
 	<meta name="google" content="notranslate" />
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
@@ -33,7 +33,7 @@ const canonicalURL = new  URL(Astro.url.pathname, Astro.site)
 		rel="icon"
 		type="image/png"
 		sizes="192x192"
-		href="/android-icon-192x192.png"
+		href="../images/profile.png"
 	/>
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
@@ -47,14 +47,17 @@ const canonicalURL = new  URL(Astro.url.pathname, Astro.site)
 	<meta property="og:url" content={canonicalURL} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content="../../public/imgages/Sofi portada.png" />
+	<meta property="og:image" content="../../imgages/Sofi portada.png" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="../../public/imgages/Sofi portada.png" />
+	<meta name="twitter:image" content="../../imgages/Sofi portada.png" />
 	<meta name="twitter:image:alt" content={title} />
 	<meta name="twitter:site" content="@itssofidev" />
 	<meta name="twitter:creator" content="@itssofidev" />
+
+
+	<link rel="stylesheet" href="../styles/base.css">
 </head>
