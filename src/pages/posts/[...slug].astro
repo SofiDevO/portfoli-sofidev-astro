@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import Footer from "../../components/Footer.vue";
 import Social from "../../components/Social.svelte";
-import HeaderTop from "../../components/HeaderTop"
+import HeaderTop from "../../components/HeaderTop";
 export async function getStaticPaths() {
 	const posts = await getCollection("tips");
 	return posts.map((post) => ({
@@ -16,7 +16,7 @@ const { Content } = await post.render();
 ---
 
 <Base title="SofiDev">
-	<HeaderTop client:load/>
+	<HeaderTop client:load />
 	<Content />
 	<Social />
 	<Footer />

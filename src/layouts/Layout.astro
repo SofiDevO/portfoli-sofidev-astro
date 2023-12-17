@@ -7,11 +7,13 @@ interface Props {
 
 <!DOCTYPE html>
 <html lang="en">
-	<BaseHead title="SofiDev" description="SofiDev Blog con astro" />
+	<BaseHead title="SofiDev" description="SofiDev Portfolio" />
 
 	<body>
 		<slot />
 		<style is:global>
+			@import url("https://fonts.googleapis.com/css2?family=Preahvihear&display=swap");
+
 			:root {
 				--accent: 136, 58, 234;
 				--accent-light: 224, 204, 250;
@@ -22,6 +24,7 @@ interface Props {
 					rgb(var(--accent-light)) 30%,
 					white 60%
 				);
+				--text-enphasys: "Preahvihear", sans-serif;
 			}
 			html {
 				font-family: system-ui, sans-serif;

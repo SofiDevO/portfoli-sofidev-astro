@@ -1,45 +1,47 @@
 ---
 import Layout from "./Layout.astro";
 const {
-    content: {image,title,resume,pubDate, tags, category}
-} = Astro.props
+	content: { image, title, resume, pubDate, tags, category },
+} = Astro.props;
 const event = new Date(pubDate);
 const date = event.toDateString();
 ---
+
 <Layout>
-<section class="pt-20 " >
-	<div class="mx-auto   max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-		<div class="max-w-3xl">
-			<h2 class="text-3xl font-bold sm:text-4xl text-white">
-				{title}
-			</h2>
-            <span class="flex flex-col sm:gap-y-2 py-5 md:flex-row md-items-center mmd:gap-y-0 md:divide-x md:divide-textColor text-purple-600 ">
-                <time class="pr-2">{date}</time>
-                {
-                    tags.map((item) => (
-                        <span class="whitespace-nowrap rounded-full bg-purple-600 px-2.5  py-1 text-xs text-white ">
-                            {item}
-                        </span>
-                    ))
-                }
-            </span>
-		</div>
+	<section class="pt-20">
+		<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+			<div class="max-w-3xl">
+				<h2 class="text-3xl font-bold sm:text-4xl text-white">
+					{title}
+				</h2>
+				<span
+					class="flex flex-col sm:gap-y-2 py-5 md:flex-row md-items-center mmd:gap-y-0 md:divide-x md:divide-textColor text-purple-600"
+				>
+					<time class="pr-2">{date}</time>
+					{
+						tags.map((item) => (
+							<span class="whitespace-nowrap rounded-full bg-purple-600 px-2.5  py-1 text-xs text-white ">
+								{item}
+							</span>
+						))
+					}
+				</span>
+			</div>
 
-		<div class=" h-64 overflow-hidden sm:h-80 lg:h-full flex justify-center">
-			<img
-				alt={title}
-				src={image}
-				class="inset-0 lg:h-1/2 lg:w-3/4 md:h-full md:w-full object-contain align-center "
-			/>
-		</div>
-		<div class="mt-8 justify-center	 gap-8 lg:grid-cols-2 lg:gap-16">
-
-			<div class="lg:py-16 justify-center">
-				<article class="space-y-4 text-gray-200 text-md justify-center ">
-					<slot/>
-				</article>
+			<div class="h-64 overflow-hidden sm:h-80 lg:h-full flex justify-center">
+				<img
+					alt={title}
+					src={image}
+					class="inset-0 lg:h-1/2 lg:w-3/4 md:h-full md:w-full object-contain align-center"
+				/>
+			</div>
+			<div class="mt-8 justify-center gap-8 lg:grid-cols-2 lg:gap-16">
+				<div class="lg:py-16 justify-center">
+					<article class="space-y-4 text-gray-200 text-md justify-center">
+						<slot />
+					</article>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 </Layout>

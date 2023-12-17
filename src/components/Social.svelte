@@ -1,5 +1,7 @@
-<ul class="mt-12 flex justify-center gap-6 md:gap-8 pb-8
-">
+<ul
+	class="mt-6 flex justify-center gap-6 md:gap-8 pb-8
+"
+>
 	<li>
 		<a
 			href="/"

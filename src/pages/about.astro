@@ -6,18 +6,16 @@ import selfie from "../../public/images/selfie1.jpg";
 import Social from "../components/Social.svelte";
 ---
 
-<Layout title="aboutme">
+<Layout title="about">
 	<HeaderTop client:load />
 	<section class="pt-20">
-		<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 ">
+		<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
 			<div class="max-w-3xl">
-				<h2 class="text-3xl font-bold sm:text-4xl text-purple-500">
-                    Sobre Mí	
-                </h2>
+				<h2 class="text-3xl font-bold sm:text-4xl text-purple-500">Sobre Mí</h2>
 			</div>
 
 			<div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-				<div class="rounded-xl	 relative h-64 overflow-hidden sm:h-80 lg:h-full ">
+				<div class="rounded-xl relative h-64 overflow-hidden sm:h-80 lg:h-full">
 					<img
 						alt="IA avatar"
 						src={selfie}
@@ -26,16 +24,21 @@ import Social from "../components/Social.svelte";
 				</div>
 
 				<div class="lg:py-16">
-					<article class=" space-y-4 text-white">
+					<article class="space-y-4 text-white">
 						<h3 class="text-2xl">
-                            Escritora por pasión, developer por prefesión. 
+							Escritora por pasión, developer por prefesión.
 						</h3>
 
 						<p>
-							Me gradué del programa One Oracle Next education con honores. Tuve el privilegio de dar el discurso de graduación y recibir un reconocimiento como ""One helper"
+							Me gradué del programa One Oracle Next education con honores. Tuve
+							el privilegio de dar el discurso de graduación y recibir un
+							reconocimiento como ""One helper"
 						</p>
-						<p>Actualmente estoy creando contenido educativo en mi canal de Youtube y estoy trabajando en varios proyectos colaborativos</p>
-                        <Social />
+						<p>
+							Actualmente estoy creando contenido educativo en mi canal de
+							Youtube y estoy trabajando en varios proyectos colaborativos
+						</p>
+						<Social />
 					</article>
 				</div>
 			</div>

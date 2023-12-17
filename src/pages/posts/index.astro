@@ -1,60 +1,44 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
-import {getCollection} from "astro:content";
+import { getCollection } from "astro:content";
 import HeaderTop from "../../components/HeaderTop";
 import Footer from "../../components/Footer.vue";
 
 const post = (await getCollection("tips")).sort(
-    (a,b) =>a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
-<Layout title="Sofidev">
-	<HeaderTop client:load/>
+<Layout title="blog">
+	<HeaderTop client:load />
 	<main>
-			<defs>
-				<linearGradient
-					id="paint0_linear_1805_24383"
-					x1="247.358"
-					y1="0"
-					x2="247.358"
-					y2="622.479"
-					gradientUnits="userSpaceOnUse"
-				>
-					<stop stop-opacity="0.9"></stop>
-					<stop offset="1" stop-opacity="0.2"></stop>
-				</linearGradient>
-			</defs>
-		</svg>
-
 		<ul role="list" class="link-card-grid">
 			{
 				post.map((post) => (
 					<Card
-
 						image={post.data.image}
 						title={post.data.title}
 						resume={post.data.resume}
-                        slug={post.slug}
+						slug={post.slug}
 					/>
 				))
-					</Card>
 			}
 		</ul>
 	</main>
-	<Footer/>
 </Layout>
+
+<Footer />
 
 <style>
 	main {
 		margin: auto;
-    padding: 11rem 0 8rem 0;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
+		padding: 11rem 0 8rem 0;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
 	}
 	.astro-a {
 		position: absolute;
