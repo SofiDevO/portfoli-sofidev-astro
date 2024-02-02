@@ -7,7 +7,7 @@ import svelte from "@astrojs/svelte";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-	site: "https://localhost:3000",
+	site: 'https://template-astro-portfolio.github.io',
 	vite: {
 		ssr: {
 			noExternal: ["react-icons"],
