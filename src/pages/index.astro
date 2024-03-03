@@ -5,6 +5,7 @@ import HeaderTop from "../components/HeaderTop";
 import Footer from "../components/Footer.vue";
 import { getCollection } from "astro:content";
 import Hero from "../components/Hero.astro";
+import { PortfolioSection } from "../components/PortfolioSection";
 
 const post = (await getCollection("tips")).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -15,6 +16,7 @@ const post = (await getCollection("tips")).sort(
 	<HeaderTop client:load />
 	<Hero />
 	<main>
+		<PortfolioSection/>
 		<ul role="list" class="link-card-grid">
 			{
 				post
