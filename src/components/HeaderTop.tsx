@@ -68,13 +68,13 @@ export default function HeaderTop(): JSX.Element {
 				</div>
 				<Popover.Group className="hidden lg:flex lg:gap-x-12">
 					<a
-						href="#"
+						href="/#skills"
 						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Skills
 					</a>
 					<a
-						href="#"
+						href="/#portfolio"
 						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Portfolio

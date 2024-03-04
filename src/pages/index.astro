@@ -16,7 +16,14 @@ const post = (await getCollection("tips")).sort(
 	<HeaderTop client:load />
 	<Hero />
 	<main>
-		<PortfolioSection/>
+		<section id="skills">
+			<div class="skills__container flex-row h-[100dvh]  w-96">
+				<h2 class="w-96">skills will be here</h2>
+			</div>
+		</section>
+		<section id="portfolio">
+			<PortfolioSection/>
+		</section>
 		<ul role="list" class="link-card-grid">
 			{
 				post
@@ -35,7 +42,10 @@ const post = (await getCollection("tips")).sort(
 	<Footer />
 </Layout>
 
-<style>
+<style is:global>
+	*{
+		scroll-behavior: smooth;
+	}
 	main {
 		margin: auto;
 
