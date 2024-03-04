@@ -5,7 +5,7 @@ export const PortfolioSection = () => {
 		<>
 			{PortfolioData.map((data) => {
 				return (
-					<div className="portafolio__tarjeta" key={data.id}>
+					<div className="flex-column" key={data.id}>
 						<div className="portafolio__cara faceA card__content caja__dark__portafolio ">
 							<div className="img__container">
 								<img

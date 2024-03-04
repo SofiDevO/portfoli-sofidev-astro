@@ -21,23 +21,26 @@ const post = (await getCollection("tips")).sort(
 				<h2 class="">skills will be here</h2>
 			</div>
 		</section>
-		<section id="portfolio">
+		<section id="portfolio" class="flex">
 			<PortfolioSection/>
 		</section>
-		<ul role="list" class="link-card-grid">
-			{
-				post
-					.slice(0, 2)
-					.map((post) => (
-						<Card
-							image={post.data.image}
-							title={post.data.title}
-							resume={post.data.resume}
-							slug={post.slug}
-						/>
-					))
-			}
-		</ul>
+		<section id="post" class="blog w-[60%] self-center">
+			<ul role="list" class="link-card-grid">
+				{
+					post
+						.slice(0, 2)
+						.map((post) => (
+							<Card
+								image={post.data.image}
+								title={post.data.title}
+								resume={post.data.resume}
+								slug={post.slug}
+							/>
+						))
+				}
+			</ul>
+		</section>
+
 	</main>
 	<Footer />
 </Layout>
@@ -48,10 +51,11 @@ const post = (await getCollection("tips")).sort(
 	}
 	main {
 		margin: auto;
-
+		display: flex;
+		flex-direction: column;
 		padding: 2rem 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
+		width: 100%;
+		max-width: calc(100% - 3rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
