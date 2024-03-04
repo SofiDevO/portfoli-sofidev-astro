@@ -1,7 +1,6 @@
 import { Fragment, useState } from "react";
 import profile from "../../public/images/profile.png";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-
 import {
 	Bars3Icon,
 	/* FireIcon, */
@@ -50,7 +49,7 @@ export default function HeaderTop(): JSX.Element {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<header className="backdrop-blur-md bg-black/30 fixed  w-full z-20">
+		<header className="backdrop-blur-md bg-[#000000be] fixed  w-full z-50">
 			<nav
 				className="mx-auto flex max-w-8xl justify-between p-2 lg:px-8 items-center"
 				aria-label="Global"

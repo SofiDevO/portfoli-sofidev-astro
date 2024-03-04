@@ -7,10 +7,10 @@ interface Props {
 
 <!DOCTYPE html>
 <html lang="en">
-	<BaseHead title="SofiDev" description="SofiDev Portfolio" />
-
+	<BaseHead title="SofiDev template" description=" Astro Portfolio Template" />
 	<body>
 		<slot />
+
 		<style is:global>
 			@import url("https://fonts.googleapis.com/css2?family=Preahvihear&display=swap");
 
@@ -24,16 +24,15 @@ interface Props {
 					rgb(var(--accent-light)) 30%,
 					white 60%
 				);
-				--text-enphasys: "Preahvihear", sans-serif;
+				--text-enphasys: "Montserrat", sans-serif;
 			}
 			html {
-				font-family: system-ui, sans-serif;
+				font-family: "Montserrat", sans-serif;
 				background: #160031;
 				background-size: 224px;
 			}
 			code {
-				font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-					DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+				font-family: Montserrat;
 			}
 
 			body::-webkit-scrollbar {
@@ -43,7 +42,14 @@ interface Props {
 			body::-webkit-scrollbar-thumb {
 				background-color: rgb(0, 229, 255);
 			}
-
+			ol,
+			ul,
+			li {
+				list-style-type: disc;
+			}
+			a {
+				text-decoration: none;
+			}
 			body::-webkit-scrollbar-thumb:hover {
 				background-color: #5d00cf;
 			}

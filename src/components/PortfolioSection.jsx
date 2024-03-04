@@ -3,6 +3,8 @@ import { PortfolioData, skillIcons } from "../data/PortfolioData";
 export const PortfolioSection = () => {
 	return (
 		<>
+				<section id="portfolio" class="flex flex-col lg:flex-row">
+
 			{PortfolioData.map((data) => {
 				return (
 					<div className="flex-column" key={data.id}>
@@ -53,6 +55,7 @@ export const PortfolioSection = () => {
 					</div>
 				);
 			})}
+			</section>
 		</>
 	);
 };

@@ -115,3 +115,9 @@
 		</a>
 	</li>
 </ul>
+
+<style>
+	ul li{
+		list-style-type: none;
+	}
+</style>
