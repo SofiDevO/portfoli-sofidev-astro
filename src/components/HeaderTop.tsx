@@ -39,7 +39,7 @@ const callsToAction = [
 		href: "https://www.youtube.com/channel/UC36_js-krsAHAEAWpEDhHtw",
 		icon: FaYoutube,
 	},
-	{ name: "Mail me", href: "mailto:contact@itssofi.dev", icon: EnvelopeIcon },
+	{ name: "Mail me", href: "mailto:sofi.dev@outlook.com", icon: EnvelopeIcon },
 ];
 
 function classNames(...classes) {
