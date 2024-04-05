@@ -2,24 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import HeaderTop from "../components/HeaderTop";
 import Footer from "../components/Footer.vue";
-import Social from "../components/Social.svelte";
+import Social from "../components/Social.astro";
 ---
 
 
 <Layout title="about">
 	<HeaderTop client:load />
-	<section class="pt-20" >
-		<div  class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+	<section class="pt-[6rem]" >
+		<div  class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-[20px] lg:px-8">
 			<div class="max-w-3xl">
-				<h2 class="text-3xl font-bold sm:text-4xl text-purple-500">Sobre Mí</h2>
+				<h2 class="text-3xl font-bold sm:text-4xl  text-transparent text-[29px]  bg-clip-text bg-gradient-to-r from-purple-400 to-[#00E5FF]">Sobre Mí</h2>
 			</div>
 
 			<div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
 				<div class="rounded-xl relative h-64 overflow-hidden sm:h-80 lg:h-full">
 					<img
 						alt="IA avatar"
-						src="../../public/images/City-Lights.png"
-						class="rounded-xl w-full h-full md:w-90 md:h-100 inset-0 lg:w-full lg:object-cover object-contain"
+						src="../../public/images/portada1.jpg"
+						class="rounded-xl w-full h-full md:w-90 md:h-100 inset-0 lg:w-[90%]  lg:h-[77dvh]  lg:object-cover object-contain"
 					/>
 				</div>
 

@@ -33,13 +33,13 @@ const post = (await getCollection("tips")).sort(
 <style>
 	main {
 		margin: auto;
-		padding: 11rem 0 8rem 0;
 		width: 800px;
-		max-width: calc(100% - 2rem);
+		/* max-width: calc(100% - 2rem); */
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
 	}
+
 	.astro-a {
 		position: absolute;
 		top: -32px;
@@ -53,6 +53,6 @@ const post = (await getCollection("tips")).sort(
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
-		padding: 0;
+		padding-top: 6rem;
 	}
 </style>
