@@ -1,5 +1,4 @@
 import { Fragment, useState } from "react";
-import profile from "../../public/images/profile.png";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
 	Bars3Icon,
@@ -170,7 +169,7 @@ export default function HeaderTop(): JSX.Element {
 					<div className="flex items-center justify-between">
 						<a href="/" className="-m-1.5 p-1.5">
 							<span className="sr-only">Sofidev</span>
-							<img className="h-8 w-auto" src={profile} alt="" />
+							<img className="h-8 w-auto" src="../../imagenes/profile-pic.png" alt="" />
 						</a>
 						<button
 							type="button"
