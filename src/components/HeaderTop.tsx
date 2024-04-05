@@ -1,7 +1,6 @@
 import { Fragment, useState } from "react";
 import profile from "../../public/images/profile.png";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-
 import {
 	Bars3Icon,
 	/* FireIcon, */
@@ -39,7 +38,7 @@ const callsToAction = [
 		href: "https://www.youtube.com/channel/UC36_js-krsAHAEAWpEDhHtw",
 		icon: FaYoutube,
 	},
-	{ name: "Mail me", href: "mailto:contact@itssofi.dev", icon: EnvelopeIcon },
+	{ name: "Mail me", href: "mailto:sofi.dev@outlook.com", icon: EnvelopeIcon },
 ];
 
 function classNames(...classes) {
@@ -50,12 +49,12 @@ export default function HeaderTop(): JSX.Element {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<header className="backdrop-blur-md bg-black/30 fixed  w-full z-10">
+		<header className="backdrop-blur-md bg-[#000000be] fixed  w-full z-50">
 			<nav
 				className="mx-auto flex max-w-8xl justify-between p-2 lg:px-8 items-center"
 				aria-label="Global"
 			>
-				<Logo />
+				<Logo/>
 				<div className="flex lg:hidden">
 					<button
 						type="button"
@@ -68,32 +67,32 @@ export default function HeaderTop(): JSX.Element {
 				</div>
 				<Popover.Group className="hidden lg:flex lg:gap-x-12">
 					<a
-						href="#"
-						className="text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400"
+						href="/#skills"
+						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Skills
 					</a>
 					<a
-						href="#"
-						className="text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400"
+						href="/#portfolio"
+						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Portfolio
 					</a>
 					<a
 						href="/posts"
-						className="text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400"
+						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Blog
 					</a>
 					<a
 						href="/about"
-						className="text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400"
+						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						About Me
 					</a>
 
-					<Popover className="relative">
-						<Popover.Button className="flex items-center gap-x-1 text-xl font-semibold leading-6 text-violet-500 hover:text-emerald-400">
+					<Popover className="relative ">
+						<Popover.Button className="flex items-center gap-x-1 text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]">
 							Much More
 							<ChevronDownIcon
 								className="h-5 w-5 flex-none text-gray-400"
@@ -110,8 +109,8 @@ export default function HeaderTop(): JSX.Element {
 							leaveFrom="opacity-100 translate-y-0"
 							leaveTo="opacity-0 translate-y-1"
 						>
-							<Popover.Panel className="absolute -left-80 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl  bg-black shadow-lg ring-1">
-								<div className="p-4">
+							<Popover.Panel className="absolute -left-80 top-full  mt-3 w-screen max-w-md overflow-hidden rounded-3xl  bg-black shadow-lg ring-1">
+								<div className="p-4 z-20">
 									{more.map((item) => (
 										<div
 											key={item.name}
@@ -139,7 +138,7 @@ export default function HeaderTop(): JSX.Element {
 										</div>
 									))}
 								</div>
-								<div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+								<div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 ">
 									{callsToAction.map((item) => (
 										<a
 											key={item.name}

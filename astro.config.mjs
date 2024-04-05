@@ -6,13 +6,13 @@ import vue from "@astrojs/vue";
 import svelte from "@astrojs/svelte";
 import sitemap from "@astrojs/sitemap";
 
+// https://astro.build/config
 export default defineConfig({
-	site: 'https://template-astro-portfolio.github.io',
-	vite: {
-		ssr: {
-			noExternal: ["react-icons"],
-		},
-	},
-
-	integrations: [tailwind(), mdx(), react(), vue(), svelte(), sitemap()],
+  site: "https://localhost:3000",
+  vite: {
+    ssr: {
+      noExternal: ["react-icons"]
+    }
+  },
+  integrations: [tailwind(), mdx(), react(), vue(), svelte(), sitemap()]
 });
