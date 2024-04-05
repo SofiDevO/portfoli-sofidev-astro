@@ -1,6 +1,6 @@
 export const PortfolioData = [
 	{
-		imgSrc: "../../public/images/portfolio-images/portfolio.webp",
+		imgSrc: "../../images/portfolio-images/portfolio.webp",
 		title: "Portfolio Astro",
 		desc: "My portfolio made with astro",
 		demoURL: "https://itssofi.dev/",
@@ -8,7 +8,7 @@ export const PortfolioData = [
 		skill: ["Astro", "CSS", "React"],
 	},
 	{
-		imgSrc: "../../public/images/portfolio-images/alura_geek.webp",
+		imgSrc: "../../images/portfolio-images/alura_geek.webp",
 		title: "Alura Geek",
 		desc: "My portfolio made with astro",
 		demoURL: "https://itssofi.dev/",
@@ -16,7 +16,7 @@ export const PortfolioData = [
 		skill: ["JavaScript","CSS" ],
 	},
 	{
-		imgSrc: "../../public/images/portfolio-images/aluraFlix.webp",
+		imgSrc: "../../images/portfolio-images/aluraFlix.webp",
 		title: "Portfolio Astro",
 		desc: "My portfolio made with astro",
 		demoURL: "https://itssofi.dev/",
