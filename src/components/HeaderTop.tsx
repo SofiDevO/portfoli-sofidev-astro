@@ -49,7 +49,7 @@ export default function HeaderTop(): JSX.Element {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<header className="backdrop-blur-md bg-[#000000be] fixed  w-full z-50">
+		<header className="backdrop-blur-md bg-[#000000be] fixed  w-full z-50 px-3">
 			<nav
 				className="mx-auto flex max-w-8xl justify-between p-2 lg:px-8 items-center"
 				aria-label="Global"

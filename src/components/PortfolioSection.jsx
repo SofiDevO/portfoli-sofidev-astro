@@ -7,7 +7,7 @@ export const PortfolioSection = () => {
 
 			{PortfolioData.map((data) => {
 				return (
-					<div className="group/card overflow-hidden flex-column  min-w-[17rem] w-[100%] max-w-[30rem] gap-4 bg-[#8081811b] rounded-xl h-auto max-h-[36dvh] md:max-h-[45dvh] border-sky-950 border-[1px]" key={data.id} >
+					<div className="group/card overflow-hidden flex-column  min-w-[17rem] w-[100%] max-w-[30rem] gap-4 bg-[#8081811b] rounded-xl h-auto max-h-[30dvh] md:max-h-[45dvh] border-sky-950 border-[1px]" key={data.id} >
 						<div className="group/faceA  portafolio__cara faceA card__content  ">
 							<div className="max-h-[31dvh]  w-full self-center">
 								<img
