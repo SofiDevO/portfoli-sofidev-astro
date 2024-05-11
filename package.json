@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "css": "sass src/styles/main.scss public/css/main.css --watch"
   },
   "dependencies": {
     "@astrojs/mdx": "^3.0.0",

@@ -1,0 +1,19 @@
+$mainColor: #dadada;
+$text-color-important: #171c36;
+$text-color: #06334b;
+$card-bg: #cbdffa;
+$button-bg: #5168da;
+$button-bg-active: linear-gradient(
+	90deg,
+	rgba(67, 86, 191, 1) 0%,
+	rgba(56, 72, 155, 1) 100%
+);
+$text-color-dark: #cbdffa;
+$bg-gradient-dark: radial-gradient(
+	circle,
+	rgb(9, 1, 44) 0%,
+	rgb(12, 3, 40) 32%,
+	rgb(2, 0, 14) 81%,
+	rgba(0, 3, 8, 1) 100%
+);
+$unit: 0.0625rem ;

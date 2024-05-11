@@ -1,0 +1,21 @@
+
+@function size($value){
+	@return v.$unit * $value;
+}
+@mixin reset-pm{
+	padding: 0;
+	margin: 0;
+}
+@mixin btn($backgronud-color, $color, $border){
+	background: $backgronud-color;
+	color: $color;
+	border-radius: 16px;
+	padding: size(10) size(20);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	@if($border == 'true'){
+		border: 1px solid v.$text-color-important;
+	}
+}

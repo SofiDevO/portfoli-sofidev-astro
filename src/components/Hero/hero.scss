@@ -1,0 +1,73 @@
+@use "../../styles/variables" as v;
+@import "../../styles/function";
+
+.dark .bg__container {
+	background: v.$bg-gradient-dark;
+}
+.hero {
+	width: 100%;
+	min-height: 100dvh;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	h1 {
+		color: black;
+		span {
+			color: aqua;
+		}
+	}
+
+	.hero__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		width: 100%;
+		max-width: 1440px;
+		gap: size(50);
+		@media screen and (max-width: 768px) {
+			flex-direction: column-reverse;
+			width: 90%;
+		}
+	}
+}
+
+.dark {
+	.hero {
+		h1 {
+			color: v.$text-color-dark;
+		}
+	}
+}
+
+.picture {
+	-webkit-animation: text-focus-in 1.8s both;
+	animation: text-focus-in 1.8s both;
+}
+.frase {
+	color: rgb(119, 0, 255);
+	font-size: 1rem;
+}
+.show__text {
+	font-size: 1rem;
+	justify-content: center;
+	font-weight: 400;
+	display: flex;
+	-webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1.3s
+		both;
+	animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s both;
+}
+
+.text-flicker-in-glow {
+	-webkit-animation: text-flicker-in-glow 2s linear both;
+	animation: text-flicker-in-glow 2s linear both;
+}
+@media screen and (max-width: 768px) {
+	.hero {
+		flex-direction: column-reverse;
+		text-align: center;
+		justify-content: center;
+		gap: 2rem;
+	}
+}

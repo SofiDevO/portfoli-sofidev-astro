@@ -3,7 +3,7 @@ import PostSection from "../components/PostSection.astro";
 import Layout from "./../layouts/Layout.astro";
 import HeaderTop from "../components/HeaderTop";
 import Footer from "../components/Footer.astro";
-import Hero from "../components/Hero.astro";
+import Hero from "../components/Hero/Hero.astro";
 import Skills from "../components/Skills.astro";
 import { PortfolioSection } from "../components/PortfolioSection";
 ---
@@ -21,9 +21,3 @@ import { PortfolioSection } from "../components/PortfolioSection";
 	</main>
 	<Footer />
 </Layout>
-
-<style>
-	:global(.dark) .bg__container{
-		background: var(--bg-gradient-dark);
-	}
-</style>

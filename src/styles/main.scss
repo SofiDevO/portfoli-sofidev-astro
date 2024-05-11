@@ -1,0 +1,66 @@
+@use "./variables" as v;
+@import "../components/Hero/hero.scss";
+@import "../../src/styles/animations.scss";
+@import "../styles/function";
+
+
+
+* {
+	@include reset-pm();
+	scroll-behavior: smooth;
+	box-sizing: border-box;
+}
+html {
+	font-family: "Montserrat", sans-serif;
+	background: v.$mainColor;
+	color: v.$text-color;
+}
+
+html.dark {
+	background-color: #0e0e11;
+	color: v.$text-color-dark;
+}
+
+code {
+	font-family: Montserrat;
+}
+
+ul,
+li {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+h1{
+	font-weight: bolder;
+	font-size: size(60);
+}
+h2{
+	font-weight: bolder;
+	font-size: size(40);
+}
+
+
+.portafolio__btn {
+	@include btn(v.$button-bg,v.$text-color ,'true');
+}
+
+
+
+
+
+
+
+
+
+/* Scroll bar */
+body::-webkit-scrollbar {
+	width: 14px;
+}
+body::-webkit-scrollbar-thumb {
+	background-color: rgb(0, 229, 255);
+}
+body::-webkit-scrollbar-thumb:hover {
+	background-color: #5d00cf;
+}
