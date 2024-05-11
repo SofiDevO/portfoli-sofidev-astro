@@ -1,4 +1,6 @@
 ---
+import { fade } from "astro:transitions";
+
 interface Props {
 	image: string;
 	title: string;
@@ -11,8 +13,8 @@ interface Props {
 const { image, title, resume, slug, } = Astro.props;
 ---
 
-<article class="group backdrop-blur-xl bg-[#0000003e] mb-3 p-3 rounded-lg" >
-	<a href={`/posts/${slug}`}>
+<article class="gap-3 group mb-3 p-3 rounded-lg min-h-[38dvh] max-w-[40rem] min-w-[20rem] overflow-hidden " >
+	<a transition:animate={fade({ duration: '5s' })} href={`/posts/${slug}`}>
 		<img
 			alt={title}
 			src={image}
@@ -20,12 +22,12 @@ const { image, title, resume, slug, } = Astro.props;
 		/>
 
 		<div class="pt-4">
-			<h3 class="text-lg font-medium text-white-900">
+			<h3 class="text-lg font-medium ">
 				{title}
 			</h3>
 		</div>
 
-		<p class="mt-2 line-clamp-3 text-sm/relaxed text-white-500 pb-10">
+		<p class="mt-2 line-clamp-3 text-sm/relaxed   pb-10">
 			{resume}
 		</p>
 	</a>

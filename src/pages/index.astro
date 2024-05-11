@@ -1,68 +1,29 @@
 ---
-import PostSection from '../components/PostSection.astro'
+import PostSection from "../components/PostSection.astro";
 import Layout from "./../layouts/Layout.astro";
 import HeaderTop from "../components/HeaderTop";
 import Footer from "../components/Footer.vue";
 import Hero from "../components/Hero.astro";
-import Skills from '../components/Skills.astro'
+import Skills from "../components/Skills.astro";
 import { PortfolioSection } from "../components/PortfolioSection";
-
 ---
 
 <Layout title="Sofidev">
-	<HeaderTop client:load />
-	<Hero />
+	<div class="bg__container">
+
+		<HeaderTop client:load />
+		<Hero />
+	</div>
 	<main>
-		<Skills/>
+		<Skills />
 		<PortfolioSection />
-		<PostSection/>
+		<PostSection />
 	</main>
 	<Footer />
 </Layout>
 
-<style is:global>
-	* {
-		scroll-behavior: smooth;
-	}
-	main {
-		margin: auto;
-		display: flex;
-		flex-direction: column;
-		padding: 2rem 1rem;
-		width: 100%;
-		max-width: calc(100% - 3rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	@media screen and (max-width:768px) {
-		main{
-			padding: 0;
-		}
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: 1fr;
-		grid-column-gap: 35px;
-		grid-row-gap: 0px;
-	}
-
-	@media screen and (max-width: 768px) {
-		.astro-a {
-			position: absolute;
-			top: -32px;
-			left: 50%;
-			transform: translatex(-50%);
-			width: 220px;
-			height: auto;
-			z-index: -1;
-		}
-		.link-card-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-			gap: 2rem;
-			padding: 0;
-		}
+<style>
+	:global(.dark) .bg__container{
+		background: var(--bg-gradient-dark);
 	}
 </style>

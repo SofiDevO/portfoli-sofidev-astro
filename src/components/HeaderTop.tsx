@@ -10,6 +10,7 @@ import { ChevronDownIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
 import { FaGithubAlt, FaLinkedin, FaYoutube } from "react-icons/fa6";
 import { ImFilePdf } from "react-icons/im";
 import { Logo } from "./Logo";
+import ThemeIcon from "./ThemeIcon.astro";
 
 const more = [
 	{
@@ -43,55 +44,54 @@ const callsToAction = [
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
-
 export default function HeaderTop(): JSX.Element {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	return (
-		<header className="backdrop-blur-md bg-[#000000be] fixed  w-full z-50 px-3">
+		<header className="fixed w-full z-50 pt-[0.5rem]">
 			<nav
-				className="mx-auto flex max-w-8xl justify-between p-2 lg:px-8 items-center"
+				className=" backdrop-blur-md bg-[#000000be] mx-auto m-0 h-16 rounded-md flex max-w-[70%] w-full min-w-[20rem] justify-between p-2 lg:px-8 items-center"
 				aria-label="Global"
 			>
 				<Logo/>
 				<div className="flex lg:hidden">
 					<button
 						type="button"
-						className="-m-3 inline-flex items-center justify-center rounded-md p-2.5 text-violet-500"
+						className=" m-3 inline-flex items-center justify-center rounded-md p-2.5 text-violet-500"
 						onClick={() => setMobileMenuOpen(true)}
 					>
 						<span className="sr-only">Open main menu</span>
 						<Bars3Icon className="h-9 w-8" aria-hidden="true" />
 					</button>
 				</div>
-				<Popover.Group className="hidden lg:flex lg:gap-x-12">
+				<Popover.Group className="hidden lg:flex lg:gap-x-12 *:text-[1rem]">
 					<a
 						href="/#skills"
-						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
+						className=" font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Skills
 					</a>
 					<a
 						href="/#portfolio"
-						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
+						className=" font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Portfolio
 					</a>
 					<a
 						href="/posts"
-						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
+						className=" font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Blog
 					</a>
 					<a
 						href="/about"
-						className="text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
+						className=" font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						About Me
 					</a>
 
 					<Popover className="relative ">
-						<Popover.Button className="flex items-center gap-x-1 text-xl font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]">
+						<Popover.Button className="flex items-center gap-x-1 *:text-[1rem] font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]">
 							Much More
 							<ChevronDownIcon
 								className="h-5 w-5 flex-none text-gray-400"
@@ -241,6 +241,7 @@ export default function HeaderTop(): JSX.Element {
 					</div>
 				</Dialog.Panel>
 			</Dialog>
+
 		</header>
 	);
 }

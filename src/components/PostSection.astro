@@ -2,23 +2,26 @@
 import { getCollection } from "astro:content";
 import PostCard from "../components/PostCard.astro";
 const post = (await getCollection("tips")).sort(
-        (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-    );
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 ---
 
-<section id="post" class="self-center">
-    <ul role="list" class="link-card-grid">
-        {
-            post
-            .slice(0, 2)
-            .map((post) => (
-                <PostCard
-                image={post.data.image}
-                title={post.data.title}
-                resume={post.data.resume}
-                slug={post.slug}
-                />
-                ))
-            }
-</ul>
+<section
+	id="post"
+	class="flex items-between w-full justify-center min-h-[80dvh]"
+>
+	<ul role="list" class="gap-12 flex justify-center items-center flex-wrap">
+		{
+			post
+				.slice(0, 2)
+				.map((post) => (
+					<PostCard
+						image={post.data.image}
+						title={post.data.title}
+						resume={post.data.resume}
+						slug={post.slug}
+					/>
+				))
+		}
+	</ul>
 </section>

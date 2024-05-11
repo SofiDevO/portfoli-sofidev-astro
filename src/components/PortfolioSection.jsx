@@ -3,7 +3,7 @@ import { PortfolioData, skillIcons } from "../data/PortfolioData";
 export const PortfolioSection = () => {
 	return (
 		<>
-				<section id="portfolio" class="flex flex-col lg:flex-row gap-20 flex-wrap w-full justify-center min-h-[100dvh]">
+				<section id="portfolio" className="flex flex-col lg:flex-row gap-20 flex-wrap w-full justify-center min-h-[100dvh]">
 
 			{PortfolioData.map((data) => {
 				return (

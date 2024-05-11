@@ -2,15 +2,16 @@
 import Social from "./Social.astro";
 ---
 
-<section class="hero px-5">
+<section class="hero px-5 ">
+
 	<div
 		class="flex md:flex-row flex-col-reverse w-[90%] md:w-[100%] items-center justify-around max-w-screen-xl gap-6"
 	>
 		<div class="flex-column justify-center flex-wrap h-auto z-0">
 			<h1
-				class="flex justify-center mb-4 lg:text-7xl md:text-[3.5rem] text-3xl text-white font-semibold font-Montserrat"
+				class="flex justify-center mb-4 lg:text-7xl md:text-[3.5rem] text-3xl text-[--text-color] dark:text-white font-semibold font-Montserrat"
 			>
-				Hi!, I'm Sofi<span class="title text-flicker-in-glow">Dev</span>
+				Hi!, I'm Sofi<span class="title text-flicker-in-glow text-[text-color] hover:text-[aqua] dark:text-[aqua]">Dev</span>
 			</h1>
 			<span class="frase font-Preahvihear text-base md:text-[2rem] self-center"
 				>A developer that Judges a book by its cover...</span
@@ -208,13 +209,16 @@ import Social from "./Social.astro";
 <style>
 	.hero {
 		width: 100%;
-		height: 100dvh;
+		min-height: 100dvh;
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
 		align-content: center;
 		justify-content: center;
+
 	}
+
+
 
 	.picture {
 		-webkit-animation: text-focus-in 1.8s both;
@@ -227,7 +231,6 @@ import Social from "./Social.astro";
 	.show__text {
 		font-size: 1rem;
 		justify-content: center;
-		color: aqua;
 		font-weight: 400;
 		display: flex;
 		-webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
@@ -238,9 +241,15 @@ import Social from "./Social.astro";
 	.text-flicker-in-glow {
 		-webkit-animation: text-flicker-in-glow 2s linear both;
 		animation: text-flicker-in-glow 2s linear both;
-		color: rgb(0, 229, 255);
 	}
-
+	@media screen and (max-width: 768px) {
+		.hero {
+			flex-direction: column-reverse;
+			text-align: center;
+			justify-content: center;
+			gap: 2rem;
+		}
+	}
 	@keyframes text-flicker-in-glow {
 		0% {
 			opacity: 0;
@@ -383,15 +392,7 @@ import Social from "./Social.astro";
 				0 0 100px rgba(255, 255, 255, 0.1);
 		}
 	}
-	@media screen and (max-width: 768px) {
-		.hero {
-			height: 116dvh;
-			flex-direction: column-reverse;
-			text-align: center;
-			justify-content: center;
-			gap: 2rem;
-		}
-	}
+
 
 	@-webkit-keyframes text-focus-in {
 		0% {
