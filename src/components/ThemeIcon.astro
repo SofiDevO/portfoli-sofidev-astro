@@ -2,7 +2,7 @@
 ---
 
 <script>
-    document.addEventListener('astro:page-load', () => {
+
 	const theme = (() => {
 		if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
 			return localStorage.getItem("theme");
@@ -32,15 +32,9 @@
 	document
 		.getElementById("themeToggle")
 		.addEventListener("click", handleToggleClick);
-    });
+
 </script>
-<script>
-    document.addEventListener('astro:after-swap', () => {
-      localStorage.theme === 'dark'
-      ? document.documentElement.classList.add("dark")
-      : document.documentElement.classList.remove("dark");
-    });
-  </script>
+
 <button id="themeToggle" class="fixed top-[92%] left-10">
 	<iconify-icon
 		class="sun"
@@ -56,7 +50,7 @@
 		style="color: #00ffff"></iconify-icon>
 </button>
 
-<style is:global>
+<style >
 	#themeToggle {
 		border: 0;
 		background: none;

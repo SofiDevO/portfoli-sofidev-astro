@@ -1,5 +1,5 @@
 ---
-import { fade } from "astro:transitions";
+import { slide } from "astro:transitions";
 
 interface Props {
 	image: string;
@@ -14,7 +14,7 @@ const { image, title, resume, slug, } = Astro.props;
 ---
 
 <article class="gap-3 group mb-3 p-3 rounded-lg min-h-[38dvh] max-w-[40rem] min-w-[20rem] overflow-hidden " >
-	<a transition:animate={fade({ duration: '5s' })} href={`/posts/${slug}`}>
+	<a href={`/posts/${slug}`}>
 		<img
 			alt={title}
 			src={image}

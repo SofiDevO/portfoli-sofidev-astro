@@ -3,7 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/PostCard.astro";
 import { getCollection } from "astro:content";
 import HeaderTop from "../../components/HeaderTop";
-import Footer from "../../components/Footer.vue";
+import Footer from "../../components/Footer.astro";
+
 
 const post = (await getCollection("tips")).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -13,7 +14,7 @@ const post = (await getCollection("tips")).sort(
 <Layout title="blog">
 	<HeaderTop client:load />
 	<main>
-		<ul role="list" class="link-card-grid">
+		<ul role="list" class="link-card-grid" >
 			{
 				post.map((post) => (
 					<Card
@@ -30,7 +31,7 @@ const post = (await getCollection("tips")).sort(
 
 <Footer />
 
-<style>
+<style >
 	main {
 		margin: auto;
 		width: 800px;
