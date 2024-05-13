@@ -1,6 +1,9 @@
 @use "../../styles/variables" as v;
 @import "../../styles/function";
 
+.bg__container{
+	background: v.$bg-light;
+}
 .dark .bg__container {
 	background: v.$bg-gradient-dark;
 }
@@ -12,23 +15,43 @@
 	flex-wrap: wrap;
 	align-content: center;
 	justify-content: center;
-	h1 {
-		color: black;
-		span {
-			color: aqua;
-		}
+}
+.hero__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
+	max-width: 1440px;
+	gap: size(50);
+	@media screen and (max-width: 768px) {
+		flex-direction: column-reverse;
+		width: 90%;
+		gap: 1rem;
+		margin-top: 7rem;
 	}
+}
 
-	.hero__container {
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
-		width: 100%;
-		max-width: 1440px;
-		gap: size(50);
+.hero__text__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: auto;
+	@media screen and (max-width: 1015px) {
+		min-width: 19rem;
+	}
+	h1 {
+		margin-bottom: size(1);
+		color: black;
+		font-size: size(74);
+		font-weight: 600;
+		@media screen and (max-width: 1015px) {
+			font-size: size(56);
+		}
 		@media screen and (max-width: 768px) {
-			flex-direction: column-reverse;
-			width: 90%;
+			font-size: 2.4rem;
+		}
+		span {
+			color:v.$text-color;
 		}
 	}
 }
@@ -37,6 +60,9 @@
 	.hero {
 		h1 {
 			color: v.$text-color-dark;
+			span {
+				color: aqua;
+			}
 		}
 	}
 }
@@ -48,6 +74,7 @@
 .frase {
 	color: rgb(119, 0, 255);
 	font-size: 1rem;
+	font-family: "Preahvihear", sans-serif;
 }
 .show__text {
 	font-size: 1rem;

@@ -50,7 +50,7 @@ export default function HeaderTop(): JSX.Element {
 	return (
 		<header className="fixed w-full z-50 pt-[0.5rem]">
 			<nav
-				className=" backdrop-blur-md bg-[#000000be] mx-auto m-0 h-16 rounded-md flex max-w-[70%] w-full min-w-[20rem] justify-between p-2 lg:px-8 items-center"
+				className=" backdrop-blur-md bg-[#000000be] mx-auto m-0 h-11 md:h-14 rounded-md flex max-w-[70%] w-full min-w-[20rem] justify-between p-2 lg:px-8 items-center"
 				aria-label="Global"
 			>
 				<Logo/>

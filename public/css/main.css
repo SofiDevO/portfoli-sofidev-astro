@@ -1,3 +1,7 @@
+.bg__container {
+  background: linear-gradient(45deg, #0074a7 #0091ce);
+}
+
 .dark .bg__container {
   background: radial-gradient(circle, rgb(9, 1, 44) 0%, rgb(12, 3, 40) 32%, rgb(2, 0, 14) 81%, rgb(0, 3, 8) 100%);
 }
@@ -10,16 +14,6 @@
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
-}
-.hero h1 {
-  color: black;
-}
-.hero span {
-  color: aqua;
-}
-
-.dark .hero h1 {
-  color: #cbdffa;
 }
 
 .hero__container {
@@ -34,7 +28,47 @@
   .hero__container {
     flex-direction: column-reverse;
     width: 90%;
+    gap: 1rem;
+    margin-top: 7rem;
   }
+}
+
+.hero__text__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
+}
+@media screen and (max-width: 1015px) {
+  .hero__text__container {
+    min-width: 19rem;
+  }
+}
+.hero__text__container h1 {
+  margin-bottom: 0.0625rem;
+  color: black;
+  font-size: 4.625rem;
+  font-weight: 600;
+}
+@media screen and (max-width: 1015px) {
+  .hero__text__container h1 {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero__text__container h1 {
+    font-size: 2.4rem;
+  }
+}
+.hero__text__container h1 span {
+  color: #06334b;
+}
+
+.dark .hero h1 {
+  color: #cbdffa;
+}
+.dark .hero h1 span {
+  color: aqua;
 }
 
 .picture {
@@ -45,6 +79,7 @@
 .frase {
   color: rgb(119, 0, 255);
   font-size: 1rem;
+  font-family: "Preahvihear", sans-serif;
 }
 
 .show__text {
@@ -364,7 +399,7 @@ h2 {
 }
 
 .portafolio__btn {
-  background: #5168da;
+  background: #085172;
   color: #06334b;
   border-radius: 16px;
   padding: 0.625rem 1.25rem;

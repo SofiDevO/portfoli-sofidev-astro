@@ -19,6 +19,8 @@
     "@astrojs/svelte": "^5.4.0",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vue": "^4.2.0",
+    "@fontsource-variable/montserrat": "^5.0.19",
+    "@fontsource/preahvihear": "^5.0.20",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@react-icons/all-files": "^4.1.0",
