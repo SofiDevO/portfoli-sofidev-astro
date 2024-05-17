@@ -65,10 +65,13 @@
 }
 
 .dark .hero h1 {
-  color: #cbdffa;
+  color: #effaff;
 }
 .dark .hero h1 span {
   color: aqua;
+}
+.dark .hero h1 span:hover {
+  color: white;
 }
 
 .picture {
@@ -372,7 +375,7 @@ html {
 
 html.dark {
   background-color: #0e0e11;
-  color: #cbdffa;
+  color: #effaff;
 }
 
 code {

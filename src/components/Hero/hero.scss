@@ -1,3 +1,4 @@
+
 @use "../../styles/variables" as v;
 @import "../../styles/function";
 
@@ -30,7 +31,6 @@
 		margin-top: 7rem;
 	}
 }
-
 .hero__text__container {
 	display: flex;
 	flex-direction: column;
@@ -42,54 +42,63 @@
 	h1 {
 		margin-bottom: size(1);
 		color: black;
-		font-size: size(74);
+		font-size: size(64);
 		font-weight: 600;
 		@media screen and (max-width: 1015px) {
 			font-size: size(56);
 		}
 		@media screen and (max-width: 768px) {
-			font-size: 2.4rem;
+			font-size: size(38);
 		}
 		span {
-			color:v.$text-color;
+			color:v.$medium-blue;
 		}
+		.text-flicker-in-glow {
+			-webkit-animation: text-flicker-in-glow 2s linear both;
+			animation: text-flicker-in-glow 2s linear both;
+		}
+	}
+	.frase {
+		color: v.$text-color-important;
+		font-size: 1rem;
+		font-family: "Preahvihear", sans-serif;
+		font-weight: 600;
+	}
+	.show__text {
+		font-size: 1rem;
+		justify-content: center;
+		font-weight: 400;
+		display: flex;
+		-webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1.3s
+			both;
+		animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s both;
 	}
 }
 
 .dark {
 	.hero {
 		h1 {
-			color: v.$text-color-dark;
+			color: v.$card-bg;
 			span {
-				color: aqua;
+				color:v.$light-blue;
+				&:hover{
+				color: white;
+			}
 			}
 		}
 	}
+	.frase{
+		color: v.$light-blue;
+	}
 }
-
 .picture {
 	-webkit-animation: text-focus-in 1.8s both;
 	animation: text-focus-in 1.8s both;
 }
-.frase {
-	color: rgb(119, 0, 255);
-	font-size: 1rem;
-	font-family: "Preahvihear", sans-serif;
-}
-.show__text {
-	font-size: 1rem;
-	justify-content: center;
-	font-weight: 400;
-	display: flex;
-	-webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1.3s
-		both;
-	animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s both;
-}
 
-.text-flicker-in-glow {
-	-webkit-animation: text-flicker-in-glow 2s linear both;
-	animation: text-flicker-in-glow 2s linear both;
-}
+
+
+
 @media screen and (max-width: 768px) {
 	.hero {
 		flex-direction: column-reverse;
