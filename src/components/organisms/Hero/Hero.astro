@@ -1,0 +1,21 @@
+---
+import Social from "@atoms/Social.astro";
+import HeroProfile from "@src/components/molecules/HeroProfile/HeroProfile.astro"
+import  getUserInfo from "@controllers/getUserInfo.js";
+---
+
+<section class="hero x ">
+	<div class="hero__container">
+		<div class="hero__text__container">
+			<h1>Hi!, I'm {getUserInfo.name}<span class=" text-flicker-in-glow ">{getUserInfo.lastName}</span></h1>
+			<span class="hero__span hero__frase  self-center"
+				>{getUserInfo.sloganHero1}</span
+			>
+			<span class="hero__span  show__text   md:text-xl"
+				>{getUserInfo.sloganHero2}</span
+			>
+			<Social />
+		</div>
+		<HeroProfile/>
+	</div>
+</section>

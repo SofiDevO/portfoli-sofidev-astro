@@ -1,7 +1,7 @@
 @use "./variables" as v;
-@import "../components/Hero/hero.scss";
-@import "../../src/styles/animations.scss";
-@import "../styles/function";
+@import "./function";
+@import "@organisms/Hero/hero";
+@import "@styles/animations";
 
 
 

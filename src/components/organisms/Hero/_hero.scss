@@ -1,6 +1,6 @@
 
-@use "../../styles/variables" as v;
-@import "../../styles/function";
+@use "@styles/variables" as v;
+@import "@styles/function";
 
 .bg__container{
 	background: v.$bg-light;
@@ -58,14 +58,21 @@
 			animation: text-flicker-in-glow 2s linear both;
 		}
 	}
-	.frase {
-		color: v.$text-color-important;
+	.hero__span {
+		align-self:center;
+		line-height: 1.5rem ;
 		font-size: 1rem;
-		font-family: "Preahvihear", sans-serif;
+		margin-bottom: 1rem;
+	}
+	.hero__frase {
+		color: v.$text-color-important;
 		font-weight: 600;
+		font-family: "Preahvihear", sans-serif;
+		@media screen and (min-width:768px) {
+			font-size: 2rem;
+		}
 	}
 	.show__text {
-		font-size: 1rem;
 		justify-content: center;
 		font-weight: 400;
 		display: flex;
@@ -87,7 +94,7 @@
 			}
 		}
 	}
-	.frase{
+	.hero__frase{
 		color: v.$light-blue;
 	}
 }
