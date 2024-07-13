@@ -1,13 +1,6 @@
-
 @use "@styles/variables" as v;
 @import "@styles/function";
 
-.bg__container{
-	background: v.$bg-light;
-}
-.dark .bg__container {
-	background: v.$bg-gradient-dark;
-}
 .hero {
 	width: 100%;
 	min-height: 100dvh;
@@ -17,26 +10,29 @@
 	align-content: center;
 	justify-content: center;
 }
+
 .hero__container {
 	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	width: 100%;
-	max-width: 1440px;
-	gap: size(50);
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1110px;
+    gap:size(2);
+    flex-wrap: wrap;
 	@media screen and (max-width: 768px) {
 		flex-direction: column-reverse;
 		width: 90%;
 		gap: 1rem;
-		margin-top: 7rem;
 	}
 }
+
 .hero__text__container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	height: auto;
-	@media screen and (max-width: 1015px) {
+	@include font-family("montserrat");
+	@include respond-to("small") {
 		min-width: 19rem;
 	}
 	h1 {
@@ -44,14 +40,14 @@
 		color: black;
 		font-size: size(64);
 		font-weight: 600;
-		@media screen and (max-width: 1015px) {
+		@include respond-to("special") {
 			font-size: size(56);
 		}
-		@media screen and (max-width: 768px) {
+		@include respond-to("medium") {
 			font-size: size(38);
 		}
 		span {
-			color:v.$medium-blue;
+			color: v.$medium-blue;
 		}
 		.text-flicker-in-glow {
 			-webkit-animation: text-flicker-in-glow 2s linear both;
@@ -59,25 +55,26 @@
 		}
 	}
 	.hero__span {
-		align-self:center;
-		line-height: 1.5rem ;
-		font-size: 1rem;
-		margin-bottom: 1rem;
+		align-self: center;
+		line-height: 1.5rem;
+		font-size: .9rem;
+		margin-bottom: .5rem;
 	}
 	.hero__frase {
+		@include font-family("preahvihear");
 		color: v.$text-color-important;
 		font-weight: 600;
-		font-family: "Preahvihear", sans-serif;
-		@media screen and (min-width:768px) {
-			font-size: 2rem;
+		@media screen and (min-width: 768px) {
+			font-size: 1.2rem;
 		}
 	}
 	.show__text {
+		@include font-family("preahvihear");
 		justify-content: center;
 		font-weight: 400;
 		display: flex;
-		-webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1.3s
-			both;
+		-webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+			1.3s both;
 		animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s both;
 	}
 }
@@ -87,24 +84,24 @@
 		h1 {
 			color: v.$card-bg;
 			span {
-				color:v.$light-blue;
-				&:hover{
-				color: white;
-			}
+				color: v.$light-blue;
+				&:hover {
+					color: white;
+				}
 			}
 		}
 	}
-	.hero__frase{
+	.hero__frase {
 		color: v.$light-blue;
+	}
+	.show__text{
+		color: v.$mainColor;
 	}
 }
 .picture {
 	-webkit-animation: text-focus-in 1.8s both;
 	animation: text-focus-in 1.8s both;
 }
-
-
-
 
 @media screen and (max-width: 768px) {
 	.hero {

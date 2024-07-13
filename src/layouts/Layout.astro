@@ -1,6 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import ThemeIcon from "../components/ThemeIcon.astro";
+import "@styles/main.scss"
 interface Props {
 	title: string;
 }
@@ -8,11 +9,9 @@ interface Props {
 
 <!DOCTYPE html>
 <html lang="en">
-	<BaseHead title="SofiDev template" description=" Astro Portfolio Template" />
-
+	<BaseHead title="SofiDev template" description="Astro Portfolio Template"/>
 	<body>
-		<ThemeIcon />
-
+		<ThemeIcon/>
 		<slot />
 	</body>
 </html>

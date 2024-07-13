@@ -3,64 +3,107 @@
 @import "@organisms/Hero/hero";
 @import "@styles/animations";
 
-
-
 * {
-	@include reset-pm();
-	scroll-behavior: smooth;
-	box-sizing: border-box;
+  @include reset-pm();
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
+
 html {
-	font-family: "Montserrat", sans-serif;
-	background: v.$mainColor;
-	color: v.$text-color;
-}
+  font-family: "Montserrat", sans-serif;
+  color: v.$text-color;
 
+}
 html.dark {
-	background-color: #0e0e11;
-	color: v.$text-color-dark;
+  background-color: v.$color-background-body;
+}
+body {
+  overflow-x: hidden;
 }
 
+
+.background{
+	position: relative;
+	z-index: 1;
+	overflow-x: hidden;
+	width: 100%;
+	background-color: v.$mainColor;
+}
+
+.darck.background{
+	background-color: v.$color-background-body;
+}
+
+.backgroud:after,
+.backgroud:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	z-index: -10;
+
+}
+.backgroud:before{
+	@include toggle-theme("ligth");
+}
+.dark{
+  .backgroud:before  {
+	@include toggle-theme("dark");
+  }
+
+
+
+  .dark.background:after {
+	content: "";
+	background-color:v.$color-background-after;
+	z-index: -3;
+  }
+}
 code {
-	font-family: Montserrat;
+  font-family: Montserrat;
 }
 
 ul,
 li {
-	list-style-type: none;
-}
-a {
-	text-decoration: none;
-}
-h1{
-	font-weight: bolder;
-	font-size: size(60);
-}
-h2{
-	font-weight: bolder;
-	font-size: size(40);
+  list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: size(60);
+}
+
+h2 {
+  font-weight: bolder;
+  font-size: size(40);
+}
 
 .portafolio__btn {
-	@include btn(v.$button-bg,v.$text-color ,'true');
+  @include btn(v.$button-bg, v.$text-color, "true");
 }
 
-
-
-
-
-
-
-
+main {
+  padding-top: 5rem;
+}
 
 /* Scroll bar */
 body::-webkit-scrollbar {
-	width: 14px;
+  width: 14px;
 }
+
 body::-webkit-scrollbar-thumb {
-	background-color: rgb(0, 229, 255);
+  background-color: rgb(0, 229, 255);
 }
+
 body::-webkit-scrollbar-thumb:hover {
-	background-color: #5d00cf;
+  background-color: #5d00cf;
 }

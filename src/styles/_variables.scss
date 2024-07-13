@@ -1,13 +1,51 @@
 
-$mainColor: #eeeeee;
+/*Gradiente Ligth mode   */
+$color-background-body-ligth: #e9d4e4;
+$color-background-before-ligth: #e0b0f1;
+$color-gradient1-start-ligth: rgba(186, 26, 244, 0.3);
+$color-gradient1-end-ligth: rgba(133, 20, 209, 0);
+$color-gradient2-start-ligth: rgba(164, 26, 244, 0.428);
+$color-gradient2-middle-ligth: rgba(187, 0, 255, 0.187);
+$color-gradient2-end-ligth: rgba(170, 55, 212, 0);
+$color-gradient3-start-ligth: rgba(170, 1, 255, 0.2);
+$color-gradient3-middle-ligth: rgba(173, 19, 220, 0.033);
+$color-gradient3-end-ligth: rgba(151, 54, 199, 0);
+$color-gradient4-start-ligth: rgba(155, 39, 232, 0.087);
+$color-gradient4-end-ligth: rgba(110, 21, 161, 0.05);
+$color-background-gradient5-ligth: #e6b8f2;
+$color-gradient6-start-ligth: rgba(159, 40, 218, 0.115);
+$color-background-gradient6-ligth: #f1e7f7;
+$color-background-after-ligth: #dbc4e6;
+
+/*Gradiente dark mode   */
+$color-background-body: #06080c;
+$color-background-before: #090c12;
+$color-gradient1-start: rgba(142, 26, 244, 0.3);
+$color-gradient1-end: rgba(50, 0, 124, 0);
+$color-gradient2-start: rgba(135, 26, 244, 0.5);
+$color-gradient2-middle: rgba(74, 0, 124, 0.4);
+$color-gradient2-end: rgba(78, 0, 124, 0);
+$color-gradient3-start: rgba(142, 26, 244, 0.2);
+$color-gradient3-middle: rgba(70, 0, 124, 0.1);
+$color-gradient3-end: rgba(56, 0, 124, 0);
+$color-gradient4-start: rgba(52, 0, 124, 0.075);
+$color-gradient4-end: rgba(70, 0, 124, 0.05);
+$color-background-gradient5: #100d17;
+$color-gradient6-start: rgba(129, 40, 218, 0.5);
+$color-background-gradient6: #110d17;
+$color-background-after: #18131c;
+
+// Variables Sass existentes
+
+$mainColor: #e5e5e5;
 $text-color-important: #171c36;
-$text-color: #06334b;
-$text-secundary: #0091ce;
+$text-color: #01121b;
+$text-secundary: #000a0e;
 $card-bg: #b8ebff;
 $button-bg: #085172;
-$light-blue:#06b5f1;
-$medium-blue:#02618a;
-$bg-light: linear-gradient(45deg, #0074a7 #0091ce);
+$light-blue: #06b5f1;
+$medium-blue: #4f07a7;
+$bg-light: linear-gradient(45deg, #0074a7, #0091ce);
 $text-color-dark: #effaff;
 $bg-gradient-dark: radial-gradient(
 	circle,
@@ -16,4 +54,5 @@ $bg-gradient-dark: radial-gradient(
 	rgb(2, 0, 14) 81%,
 	rgba(0, 3, 8, 1) 100%
 );
-$unit: 0.0625rem ;
+
+$unit: 0.0625rem;
