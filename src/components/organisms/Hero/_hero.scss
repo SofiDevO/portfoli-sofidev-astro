@@ -1,25 +1,18 @@
-@use "@styles/variables" as v;
-@import "@styles/function";
-
 .hero {
 	width: 100%;
 	min-height: 100dvh;
-	display: flex;
-	align-items: center;
+	@include centerFlex();
 	flex-wrap: wrap;
 	align-content: center;
-	justify-content: center;
 }
 
 .hero__container {
-	display: flex;
-    align-items: center;
-    justify-content: space-around;
+	@include centerFlex(space-around);
     width: 100%;
     max-width: 1110px;
-    gap:size(2);
+    gap: rem(2px);
     flex-wrap: wrap;
-	@media screen and (max-width: 768px) {
+	@include respond-to("medium"){
 		flex-direction: column-reverse;
 		width: 90%;
 		gap: 1rem;
@@ -27,24 +20,24 @@
 }
 
 .hero__text__container {
-	display: flex;
+	@include centerFlex();
 	flex-direction: column;
-	justify-content: center;
 	height: auto;
 	@include font-family("montserrat");
 	@include respond-to("small") {
-		min-width: 19rem;
+		min-width: rem(304px);
 	}
 	h1 {
-		margin-bottom: size(1);
+		margin-bottom: rem(10px);
 		color: black;
-		font-size: size(64);
+
+		font-size: rem(64px);
 		font-weight: 600;
 		@include respond-to("special") {
-			font-size: size(56);
+			font-size: rem(56px);
 		}
 		@include respond-to("medium") {
-			font-size: size(38);
+			font-size: rem(38px);
 		}
 		span {
 			color: v.$medium-blue;
@@ -64,15 +57,15 @@
 		@include font-family("preahvihear");
 		color: v.$text-color-important;
 		font-weight: 600;
-		@media screen and (min-width: 768px) {
-			font-size: 1.2rem;
+		@include respond-to("medium"){
+			font-size: rem(19.2px);
 		}
 	}
 	.show__text {
 		@include font-family("preahvihear");
+		display: flex;
 		justify-content: center;
 		font-weight: 400;
-		display: flex;
 		-webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
 			1.3s both;
 		animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 3s both;
@@ -103,7 +96,7 @@
 	animation: text-focus-in 1.8s both;
 }
 
-@media screen and (max-width: 768px) {
+@include respond-to("medium") {
 	.hero {
 		flex-direction: column-reverse;
 		text-align: center;

@@ -1,5 +1,7 @@
 @use "./variables" as v;
 @import "./function";
+@import "./mixins";
+@import "@molecules/HeroProfile/hero-profile";
 @import "@organisms/Hero/hero";
 @import "@styles/animations";
 
@@ -30,7 +32,7 @@ body {
 	background-color: v.$mainColor;
 }
 
-.darck.background{
+.dark.background{
 	background-color: v.$color-background-body;
 }
 
@@ -49,23 +51,20 @@ body {
 
 }
 .backgroud:before{
-	@include toggle-theme("ligth");
+	@include theme-gradient("ligth");
 }
 .dark{
   .backgroud:before  {
-	@include toggle-theme("dark");
+	@include theme-gradient("dark");
   }
-
-
-
-  .dark.background:after {
-	content: "";
-	background-color:v.$color-background-after;
-	z-index: -3;
+  .background:after {
+    content: "";
+    background-color:v.$color-background-after;
+    z-index: -3;
+    }
   }
-}
 code {
-  font-family: Montserrat;
+  @include font-family("montserrat");
 }
 
 ul,

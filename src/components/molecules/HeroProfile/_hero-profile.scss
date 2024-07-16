@@ -1,0 +1,33 @@
+.profile {
+	position: relative;
+	display: flex;
+	.profile__container {
+		position: relative;
+	}
+	.profile_pic{
+		border-radius: 50%;
+		cursor: pointer;
+		padding: 2px;
+        width: 350px;
+        height:350px;
+        z-index: 30;
+        border: 2px solid;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        transition-duration: 500ms;
+        @include respond-to("medium"){
+            width:270px;
+            height:270px;
+        }
+		&:active {
+			transform:  scale(0.95);
+		}
+	}
+
+}
+.dark {
+    .profile_pic{
+        border: 2px solid aqua;
+    }
+}
