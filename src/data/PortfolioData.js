@@ -25,6 +25,8 @@ export const PortfolioData = [
 	},
 ];
 
+
+
 export const skillIcons = {
 	JavaScript: "skill-icons:javascript",
 	React: "skill-icons:react-dark",

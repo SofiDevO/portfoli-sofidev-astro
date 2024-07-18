@@ -8,8 +8,8 @@ const userData = [
         sloganHero1: "A developer that Judges a book by its cover...",
         sloganHero2: "Because if the cover does not impress you what else can?",
     }
-
 ]
+
 
 
 

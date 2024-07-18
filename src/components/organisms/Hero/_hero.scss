@@ -72,6 +72,22 @@
 	}
 }
 
+
+.picture {
+	-webkit-animation: text-focus-in 1.8s both;
+	animation: text-focus-in 1.8s both;
+}
+
+@include respond-to("medium") {
+	.hero {
+		flex-direction: column-reverse;
+		text-align: center;
+		justify-content: center;
+		gap: 2rem;
+	}
+}
+
+
 .dark {
 	.hero {
 		h1 {
@@ -89,18 +105,5 @@
 	}
 	.show__text{
 		color: v.$mainColor;
-	}
-}
-.picture {
-	-webkit-animation: text-focus-in 1.8s both;
-	animation: text-focus-in 1.8s both;
-}
-
-@include respond-to("medium") {
-	.hero {
-		flex-direction: column-reverse;
-		text-align: center;
-		justify-content: center;
-		gap: 2rem;
 	}
 }

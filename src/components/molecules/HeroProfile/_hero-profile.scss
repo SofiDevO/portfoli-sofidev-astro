@@ -4,30 +4,105 @@
 	.profile__container {
 		position: relative;
 	}
-	.profile_pic{
+	.profile__item {
+		position: absolute;
+        z-index: 10;
+        border-radius: 50%;
+        cursor:pointer;
+        border: 1px solid rgba(124, 1, 239, 0.627) ;
+        padding: 0.5rem;
+        padding: 2px;
+        @include transition-all;
+        &:hover {
+			transform: scale(0.95);
+		}
+        &:active {
+			transform: scale(0.75);
+		}
+	}
+	.profile__item-1 {
+		left: 95px;
+		top: -14px;
+		@include respond-to("medium") {
+			left: 44px;
+		}
+	}
+    .profile__item-2{
+        right: 45px;
+        top:-4px;
+    }
+    .profile__item-3{
+        left: -16px;
+        top:80px;
+    }
+    .profile__item-4{
+        left: 307px;
+        top:80px;
+    }
+    .profile__item-5{
+        left: 0px;
+        bottom: 32px;
+    }
+    .profile__item-6{
+        right: 0px;
+        bottom: 32px;
+    }
+    .profile__item-7{
+        right: 40%;
+        bottom: -16px;
+    }
+
+    .profile__span{
+        display: flex;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgb(29, 29, 29);
+    background: rgba(147, 146, 147, 0.4039215686);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    align-items: center;
+    justify-content: center;
+        @include transition-all;
+    }
+	.profile__btn {
 		border-radius: 50%;
 		cursor: pointer;
 		padding: 2px;
-        width: 350px;
-        height:350px;
-        z-index: 30;
-        border: 2px solid;
-        transition-property: all;
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-        transition-duration: 150ms;
-        transition-duration: 500ms;
-        @include respond-to("medium"){
-            width:270px;
-            height:270px;
-        }
-		&:active {
-			transform:  scale(0.95);
+		width: 350px;
+		height: 350px;
+		z-index: 30;
+		border: 2px solid;
+		transition-property: all;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
+		transition-duration: 500ms;
+		@include respond-to("medium") {
+			width: 270px;
+			height: 270px;
 		}
+		&:active {
+			transform: scale(0.95);
+		}
+        .profile__img{
+            width: 100%;
+            max-width: 24rem;
+            min-width: 0px;
+            padding: 0 0.5rem;
+            @include respond-to("medium"){
+                padding: 0 1.25rem;
+            }
+        }
 	}
 
 }
 .dark {
-    .profile_pic{
-        border: 2px solid aqua;
+	.profile__btn {
+		border: 2px solid aqua;
+	}
+    .profile__item{
+        border-color: aqua;
     }
+
+
 }
