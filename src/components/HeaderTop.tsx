@@ -1,21 +1,18 @@
-import { Fragment, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import { useState } from "react";
 import {
-	Bars3Icon,
-	/* FireIcon, */
-	XMarkIcon,
-} from "@heroicons/react/24/outline";
-import { ChevronDownIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
-
-import { FaGithubAlt, FaLinkedin, FaYoutube } from "react-icons/fa6";
+	FaGithubAlt,
+	FaLinkedin,
+	FaYoutube,
+	FaBars,
+	FaChevronDown,
+} from "react-icons/fa"; // Importación de iconos
 import { ImFilePdf } from "react-icons/im";
-import { Logo } from "./Logo";
-import ThemeIcon from "./ThemeIcon.astro";
+import { Logo } from "./Logo"; // Importación del componente Logo
 
 const more = [
 	{
 		name: "GithHub",
-		description: "My repositories ",
+		description: "My repositories",
 		href: "https://github.com/SofiDevO",
 		icon: FaGithubAlt,
 	},
@@ -28,88 +25,100 @@ const more = [
 	{
 		name: "My CV",
 		description: "Download my Cv",
-		href: "../docs/Angela_Sofia_Osorio_Cv_2023.pdf",
+		href: "../docs/Angela_Sofia_Osorio_CV2024_updated.pdf",
 		icon: ImFilePdf,
 	},
 ];
+
 const callsToAction = [
 	{
 		name: "Youtube",
 		href: "https://www.youtube.com/channel/UC36_js-krsAHAEAWpEDhHtw",
 		icon: FaYoutube,
 	},
-	{ name: "Mail me", href: "mailto:sofi.dev@outlook.com", icon: EnvelopeIcon },
+	{
+		name: "Mail me",
+		href: "mailto:sofi.dev@outlook.com",
+		icon: () => (
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+				strokeWidth={1.5}
+				stroke="currentColor"
+				className="w-5 h-5"
+			>
+				<path
+					strokeLinecap="round"
+					strokeLinejoin="round"
+					d="M3.75 4.5h16.5m0 0V6a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 6V4.5m0 0v.75m16.5 0v11.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V5.25"
+				/>
+			</svg>
+		),
+	},
 ];
 
-function classNames(...classes) {
-	return classes.filter(Boolean).join(" ");
-}
-export default function HeaderTop(): JSX.Element {
+export default function HeaderTop() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const [popoverOpen, setPopoverOpen] = useState(false);
 
 	return (
 		<header className="fixed w-full z-50 pt-[0.5rem]">
 			<nav
-				className=" backdrop-blur-md bg-[#000000be] mx-auto m-0 h-11 md:h-14 rounded-md flex max-w-[70%] w-full min-w-[20rem] justify-between p-2 lg:px-8 items-center"
+				className="backdrop-blur-md bg-[#000000be] mx-auto m-0 h-11 md:h-14 rounded-md flex max-w-[70%] w-full min-w-[20rem] justify-between p-2 lg:px-8 items-center"
 				aria-label="Global"
 			>
-				<Logo/>
+				<Logo />
 				<div className="flex lg:hidden">
 					<button
 						type="button"
-						className=" m-3 inline-flex items-center justify-center rounded-md p-2.5 text-violet-500"
+						className="m-3 inline-flex items-center justify-center rounded-md p-2.5 text-violet-500"
 						onClick={() => setMobileMenuOpen(true)}
 					>
 						<span className="sr-only">Open main menu</span>
-						<Bars3Icon className="h-9 w-8" aria-hidden="true" />
+						<FaBars className="h-9 w-8" aria-hidden="true" />{" "}
+						{/* Icono de menú */}
 					</button>
 				</div>
-				<Popover.Group className="hidden lg:flex lg:gap-x-12 *:text-[1rem]">
+				<div className="hidden lg:flex lg:gap-x-12 text-[1rem]">
 					<a
 						href="/#skills"
-						className=" font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
+						className="font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Skills
 					</a>
 					<a
 						href="/#portfolio"
-						className=" font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
+						className="font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Portfolio
 					</a>
 					<a
 						href="/posts"
-						className=" font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
+						className="font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						Blog
 					</a>
 					<a
 						href="/about"
-						className=" font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
+						className="font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
 					>
 						About Me
 					</a>
-
-					<Popover className="relative ">
-						<Popover.Button className="flex items-center gap-x-1 *:text-[1rem] font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]">
+					<div className="relative">
+						<button
+							onClick={() => setPopoverOpen(!popoverOpen)}
+							className="flex items-center gap-x-1 text-[1rem] font-semibold leading-6 text-violet-500 hover:text-[rgb(0,229,255)]"
+						>
 							Much More
-							<ChevronDownIcon
+							<FaChevronDown
 								className="h-5 w-5 flex-none text-gray-400"
 								aria-hidden="true"
 							/>
-						</Popover.Button>
-
-						<Transition
-							as={Fragment}
-							enter="transition ease-out duration-200"
-							enterFrom="opacity-0 translate-y-1"
-							enterTo="opacity-100 translate-y-0"
-							leave="transition ease-in duration-150"
-							leaveFrom="opacity-100 translate-y-0"
-							leaveTo="opacity-0 translate-y-1"
-						>
-							<Popover.Panel className="absolute -left-80 top-full  mt-3 w-screen max-w-md overflow-hidden rounded-3xl  bg-black shadow-lg ring-1">
-								<div className="p-4 z-20">
+						</button>
+						{popoverOpen && (
+							<div className="absolute   right-0 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-black shadow-lg ring-1">
+								<div className="p-4">
 									{more.map((item) => (
 										<div
 											key={item.name}
@@ -126,6 +135,7 @@ export default function HeaderTop(): JSX.Element {
 													href={item.href}
 													className="block font-semibold text-violet-500"
 													target="_blank"
+													rel="noopener noreferrer"
 												>
 													{item.name}
 													<span className="absolute inset-0" />
@@ -137,13 +147,14 @@ export default function HeaderTop(): JSX.Element {
 										</div>
 									))}
 								</div>
-								<div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50 ">
+								<div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
 									{callsToAction.map((item) => (
 										<a
 											key={item.name}
 											href={item.href}
 											className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 hover:text-violet-900 text-black-500"
 											target="_blank"
+											rel="noopener noreferrer"
 										>
 											<item.icon
 												className="h-5 w-5 flex-none text-black-500"
@@ -153,95 +164,83 @@ export default function HeaderTop(): JSX.Element {
 										</a>
 									))}
 								</div>
-							</Popover.Panel>
-						</Transition>
-					</Popover>
-				</Popover.Group>
-			</nav>
-			<Dialog
-				as="div"
-				className="lg:hidden"
-				open={mobileMenuOpen}
-				onClose={setMobileMenuOpen}
-			>
-				<div className="fixed inset-0 z-10" />
-				<Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-					<div className="flex items-center justify-between">
-						<a href="/" className="-m-1.5 p-1.5">
-							<span className="sr-only">Sofidev</span>
-							<img className="h-8 w-auto" src="../../imagenes/profile-pic.png" alt="" />
-						</a>
-						<button
-							type="button"
-							className="-m-2.5 rounded-md p-2.5 text-violet-500"
-							onClick={() => setMobileMenuOpen(false)}
-						>
-							<span className="sr-only">Close menu</span>
-							<XMarkIcon className="h-6 w-6" aria-hidden="true" />
-						</button>
-					</div>
-					<div className="mt-6 flow-root">
-						<div className="-my-6 divide-y divide-gray-500/10">
-							<div className="space-y-2 py-6">
-								<a
-									href="#"
-									className="-mx-3 block rounded-lg px-3 py-2 text-xl	 font-semibold leading-7 text-violet-500 hover:bg-gray-50"
-								>
-									Skills
-								</a>
-								<a
-									href="/about"
-									className="-mx-3 block rounded-lg px-3 py-2 text-xl	 font-semibold leading-7 text-violet-500 hover:bg-gray-50"
-								>
-									About me
-								</a>
-								<a
-									href="#"
-									className="-mx-3 block rounded-lg px-3 py-2 text-xl	 font-semibold leading-7 text-violet-500 hover:bg-gray-50"
-								>
-									Portfolio
-								</a>
-								<a
-									href="/posts"
-									className="-mx-3 block rounded-lg px-3 py-2 text-xl	 font-semibold leading-7 text-violet-500 hover:bg-gray-50"
-								>
-									Blog
-								</a>
 							</div>
-							<Disclosure as="div" className="-mx-3">
-								{({ open }) => (
-									<>
-										<Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-xl font-semibold leading-7 text-violet-500 hover:bg-gray-50">
-											Much more
-											<ChevronDownIcon
-												className={classNames(
-													open ? "rotate-180" : "",
-													"h-5 w-5 flex-none"
-												)}
-												aria-hidden="true"
-											/>
-										</Disclosure.Button>
-										<Disclosure.Panel className="mt-2 space-y-2">
-											{[...more, ...callsToAction].map((item) => (
-												<Disclosure.Button
-													key={item.name}
-													as="a"
-													href={item.href}
-													target="_blank"
-													className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-violet-500 hover:bg-gray-50"
-												>
-													{item.name}
-												</Disclosure.Button>
-											))}
-										</Disclosure.Panel>
-									</>
+						)}
+					</div>
+				</div>
+			</nav>
+			{/* Mobile Menu */}
+			{mobileMenuOpen && (
+				<div className="lg:hidden fixed inset-0 z-10 bg-black bg-opacity-50">
+					<div className="fixed inset-y-0 right-0 z-20 w-full bg-black px-6 py-6 sm:max-w-sm">
+						<div className="flex items-center justify-between">
+							<a href="/" className="p-1.5">
+								<span className="sr-only">Sofidev</span>
+								<Logo />
+							</a>
+							<button
+								type="button"
+								className="p-2.5 text-violet-500"
+								onClick={() => setMobileMenuOpen(false)}
+							>
+								<span className="sr-only">Close menu</span>
+								<span className="h-6 w-6">❌</span> {/* Close Icon */}
+							</button>
+						</div>
+						<div className="mt-6">
+							<a
+								href="#"
+								className="block px-3 py-2 text-xl font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+							>
+								Skills
+							</a>
+							<a
+								href="/about"
+								className="block px-3 py-2 text-xl font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+							>
+								About Me
+							</a>
+							<a
+								href="#"
+								className="block px-3 py-2 text-xl font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+							>
+								Portfolio
+							</a>
+							<a
+								href="/posts"
+								className="block px-3 py-2 text-xl font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+							>
+								Blog
+							</a>
+
+							<div className="mt-2">
+								<button
+									className="block w-full px-3 py-2 text-xl font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+									onClick={() => setPopoverOpen(!popoverOpen)}
+								>
+									Much More
+									<span className={popoverOpen ? "rotate-180" : ""}>▼</span>
+								</button>
+								{popoverOpen && (
+									<div className="mt-2 space-y-2">
+										{[...more, ...callsToAction].map((item) => (
+											<a
+												key={item.name}
+												href={item.href}
+												className="block px-6 py-2 text-sm font-semibold leading-7 text-violet-500 hover:bg-gray-50"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												{item.name}
+											</a>
+										))}
+									</div>
 								)}
-							</Disclosure>
+							</div>
 						</div>
 					</div>
-				</Dialog.Panel>
-			</Dialog>
-
+				</div>
+			)}
 		</header>
 	);
 }

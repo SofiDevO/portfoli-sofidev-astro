@@ -3,5 +3,5 @@ font-size: rem(38px);
 this will be equal to 38px wich equals font-size: size(38);
 */
 @function rem($pixels) {
-	@return $pixels / 16px * 1rem;
+	@return calc($pixels / 16px) * 1rem;
   }
