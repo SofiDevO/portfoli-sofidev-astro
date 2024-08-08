@@ -5,9 +5,9 @@ import {
 	FaYoutube,
 	FaBars,
 	FaChevronDown,
-} from "react-icons/fa"; // Importación de iconos
+} from "react-icons/fa";
 import { ImFilePdf } from "react-icons/im";
-import { Logo } from "./Logo"; // Importación del componente Logo
+import { Logo } from "../../Logo";
 
 const more = [
 	{
@@ -63,9 +63,9 @@ export default function HeaderTop() {
 	const [popoverOpen, setPopoverOpen] = useState(false);
 
 	return (
-		<header className="fixed w-full z-50 pt-[0.5rem]">
+		<header className="header">
 			<nav
-				className="backdrop-blur-md bg-[#000000be] mx-auto m-0 h-11 md:h-14 rounded-md flex max-w-[70%] w-full min-w-[20rem] justify-between p-2 lg:px-8 items-center"
+				className="header__nav lg:px-8 items-center"
 				aria-label="Global"
 			>
 				<Logo />
